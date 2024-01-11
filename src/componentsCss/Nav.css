@@ -1,0 +1,19 @@
+.navList{
+    max-width: 70%;
+}
+.links{
+    font-family: 'Tektur', curvise, sans-serif;
+    list-style: none;
+    display: inline-block;
+    margin-right: 10px;
+    
+}
+.navItem{
+    text-decoration: none;
+    color:#333;
+    font-size: 21px;
+}
+.active{
+    color:#4942E4 ;
+
+}

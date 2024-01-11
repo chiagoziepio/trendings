@@ -2,16 +2,17 @@ import { useState } from 'react'
 import {Routes, Route} from 'react-router-dom'
 import Layout from './componentsJSx/Layout'
 import Home from './componentsJSx/Home'
-import Author from './componentsJSx/Authors'
+import Authors from './componentsJSx/Authors'
 import CreatePost from './componentsJSx/CreatePost'
 import EditPost from './componentsJSx/EditPost'
 import PostCategories from './componentsJSx/PostCategories'
 import PostPage from './componentsJSx/PostPage'
 import Error from './componentsJSx/Error'
-import UserProfile from './componentsJSx/UserProfile'
+import DashBoard from './componentsJSx/DashBoard'
 import Login from './componentsJSx/Login'
 import Register from './componentsJSx/Register'
-
+import AuthorWork from './componentsJSx/AuthorWork'
+import Post from './componentsJSx/Post'
 function App() {
   
 
@@ -20,12 +21,15 @@ function App() {
       <Route path = '/' element = {<Layout/>}>
         <Route index element = {<Home/>}/>
         <Route path = 'login' element={<Login/>}/>
+        <Route path = 'posts' element={<Post/>}/>
         <Route path = 'register' element={<Register/>}/>
         <Route path = 'posts/:id/edit' element={<EditPost/>}/>
-        <Route path = 'posts/categories/:categories' element={<PostCategories/>}/>
+        <Route path = 'categories/:categories' element={<PostCategories/>}/>
         <Route path = 'posts/:id' element={<PostPage/>}/>
         <Route path = 'create' element={<CreatePost/>}/>
-        <Route path = 'author' element={<Author/>}/>
+        <Route path = 'authors' element={<Authors/>}/>
+        <Route path = 'authors/:id' element = {<AuthorWork/>}/>
+        <Route path = 'dashboard' element = {<DashBoard/>}/>
         <Route path = '*' element={<Error/>}/>
 
       </Route>

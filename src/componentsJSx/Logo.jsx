@@ -1,8 +1,10 @@
-import React from 'react'
+import '../componentsCss/logo.css'
 
 const Logo = () => {
   return (
-    <div>Logo</div>
+    <div className='logo'>
+      <h1>Trendings.co</h1>
+    </div>
   )
 }
 
