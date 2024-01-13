@@ -1,4 +1,4 @@
-import React from 'react'
+import {Link}from 'react-router-dom'
 
 const Feed = ({trends}) => {
   const shortFeedBody = trends.body.length > 220 ? trends.body.substr(0,220) + "...": trends.body;
@@ -6,13 +6,17 @@ const Feed = ({trends}) => {
     <div className='Trendfeed-container'>
         <div className="imgBx">
             <img src={trends.img} className='feedImg'  />
-            <img src={trends.authorimg} className='authorImg' />
-            <span className="authorname">{trends.authorname}</span>
+            <div className="authorBx">
+              <img src={trends.authorimg} className='authorImg' />
+              <span className="authorname">{trends.authorname}</span>
+            </div>
+            
         </div>
         <div className="feedText">
             <h2 className="title">{trends.title}</h2>
-            <p className="body">{shortFeedBody}</p>
-            <button className='btn readmoreBtn'>Read more</button>
+            <p className="body">{shortFeedBody}  <Link to ={`/posts/${trends.id}`} className='readMoreLink'>Read more</Link></p>
+            <Link to={`posts/categories/${trends.category}`}><button className='btn categoryBtn'>{trends.category}</button></Link>
+            
         </div>
     </div>
   )

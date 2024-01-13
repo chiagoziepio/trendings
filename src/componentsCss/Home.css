@@ -22,14 +22,19 @@
     display: block;
     border-radius: 15px;
 }
+.authorBx{
+    height: 40px;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+
+}
 .authorImg{
     width: 40px;
     height: 40px;
-    margin-top: 15px;
-    
     border-radius: 50%;
 }
-.authorname{
+.authorBx .authorname{
    margin-left: 10px;
 
     
@@ -37,6 +42,22 @@
 .feedText .body{
     font-size: 24px;
 }
+.feedText .body .readMoreLink{
+    color: #333;
+    opacity: .6;
+    font-size: 17px;
+}
 .feedText .title{
     margin-bottom: 10px;
 }
+.feedText .categoryBtn{
+    width: 100px;
+    height: 35px;
+    border: none;
+    background-color: #b6bbc4;
+    font-size: 19px;
+    border-radius: 10px;
+    margin-top: 15px;
+    box-shadow: 0 0 80px rgba(0,0,0,0.2);
+}
+

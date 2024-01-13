@@ -1,0 +1,29 @@
+.footer{
+    width: 100vw;
+    min-height: 150px;
+    background-color: #000;
+    margin-top: 20px;
+    padding: 15px;
+}
+footer .footerCategoryBx{
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+footer .footerCategoryBx .footerCategoryLink{
+    width: 120px;
+    height: 35px;
+    padding: 5px;
+    margin: 10px;
+    font-size: 19px;
+    background: #333;
+    color: #eee;
+    border: none;
+    border-radius: 10px;
+}
+.copywright{
+    color: #eee;
+    font-size: 22px;
+}
