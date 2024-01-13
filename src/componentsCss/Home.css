@@ -1,0 +1,42 @@
+.home{
+    flex-grow: 1;
+   
+    max-width: 96vw;
+    padding: 30px;
+}
+.home-title{
+    
+    margin-bottom: 20px;
+}
+.Trendfeed-container{
+    display: flex;
+    margin-bottom: 30px;
+}
+.imgBx{
+    margin-right: 20px;
+}
+
+.feedImg{
+    width: 250px;
+    height: 250px;
+    display: block;
+    border-radius: 15px;
+}
+.authorImg{
+    width: 40px;
+    height: 40px;
+    margin-top: 15px;
+    
+    border-radius: 50%;
+}
+.authorname{
+   margin-left: 10px;
+
+    
+}
+.feedText .body{
+    font-size: 24px;
+}
+.feedText .title{
+    margin-bottom: 10px;
+}

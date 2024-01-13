@@ -13,13 +13,14 @@ import Login from './componentsJSx/Login'
 import Register from './componentsJSx/Register'
 import AuthorWork from './componentsJSx/AuthorWork'
 import Post from './componentsJSx/Post'
+import {TrendinsPost} from './componentsJSx/Data'
 function App() {
-  
+  const [trendings, setTrendings] = useState(TrendinsPost)
 
   return (
     <Routes>
       <Route path = '/' element = {<Layout/>}>
-        <Route index element = {<Home/>}/>
+        <Route index element = {<Home TrendinsPost={TrendinsPost}/>}/>
         <Route path = 'login' element={<Login/>}/>
         <Route path = 'posts' element={<Post/>}/>
         <Route path = 'register' element={<Register/>}/>
