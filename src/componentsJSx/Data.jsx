@@ -114,7 +114,7 @@ export const PostFeeds = [
     },
     {
         id:8,
-        img: 'img/baby-hand.jpg',
+        img: 'img/bot-hand.jpg',
         title: "A.I: A Robot that help you in carrying out your daly activities",
         body:"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo nam ratione repellat quas facilis, quasi corporis iusto soluta quae magni aliquam! Magni ullam aliquid recusandae totam laboriosam! Obcaecati in totam quisquam, vero recusandae iure maiores quibusdam reiciendis dolor commodi vel repellendus placeat non reprehenderit molestias sed, pariatur atque harum voluptatem. Accusamus animi necessitatibus error corrupti molestiae reprehenderit sequi mollitia alias. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo nam ratione repellat quas facilis, quasi corporis iusto soluta quae magni aliquam! Magni ullam aliquid recusandae totam laboriosam! Obcaecati in totam quisquam, vero recusandae iure maiores quibusdam reiciendis dolor commodi vel repellendus placeat non reprehenderit molestias sed, pariatur atque harum voluptatem. Accusamus animi necessitatibus error corrupti molestiae reprehenderit sequi mollitia alias.",
         date:"January 7th, 2024",

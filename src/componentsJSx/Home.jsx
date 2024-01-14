@@ -1,12 +1,12 @@
-import Feed from './TrendFeeds'
+import TrendFeeds from './TrendFeeds'
 import '../componentsCss/Home.css'
 
-const Home = ({TrendinsPost}) => {
+const Home = ({trendings}) => {
   return (
     <section className="home">
       <h1 className=' home-title'>Trends</h1>
-      {TrendinsPost.map(trends =>(
-        <Feed
+      {trendings.map(trends =>(
+        <TrendFeeds
           key= {trends.id}
           trends={trends}
         />
