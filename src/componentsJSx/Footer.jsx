@@ -17,6 +17,9 @@ const Footer = () => {
         <Link to = '/posts/categories/healths'><button className="footerCategoryLink">Healths</button></Link>
         <Link to = '/posts/categories/shoes'><button className="footerCategoryLink">Shoes</button></Link>
         <Link to = '/posts/categories/programming'><button className="footerCategoryLink">Programming</button></Link>
+        <Link to = '/posts/categories/musics'><button className="footerCategoryLink">Musics</button></Link>
+        <Link to = '/posts/categories/art'><button className="footerCategoryLink">Art</button></Link>
+        <Link to = '/posts/categories/fasshion'><button className="footerCategoryLink">Fashion</button></Link>
       </div>
       <div className="copywrightbx">
         <p className="copywright">Copywright &copy;Trendings.co  {today.getUTCFullYear()}</p>
