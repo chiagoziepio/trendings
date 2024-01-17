@@ -37,12 +37,12 @@ export const TrendinsPost = [
 export const PostFeeds = [
     {
         id:1,
-        img: 'img/engineering-bot.jpg',
+        img: 'https://i.pinimg.com/236x/87/89/c0/8789c0c834781599ea59fc123e1f051e.jpg',
         title: "Achieve more through Artificial inteligent ",
         body:"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo nam ratione repellat quas facilis, quasi corporis iusto soluta quae magni aliquam! Magni ullam aliquid recusandae totam laboriosam! Obcaecati in totam quisquam, vero recusandae iure maiores quibusdam reiciendis dolor commodi vel repellendus placeat non reprehenderit molestias sed, pariatur atque harum voluptatem. Accusamus animi necessitatibus error corrupti molestiae reprehenderit sequi mollitia alias. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo nam ratione repellat quas facilis, quasi corporis iusto soluta quae magni aliquam! Magni ullam aliquid recusandae totam laboriosam! Obcaecati in totam quisquam, vero recusandae iure maiores quibusdam reiciendis dolor commodi vel repellendus placeat non reprehenderit molestias sed, pariatur atque harum voluptatem. Accusamus animi necessitatibus error corrupti molestiae reprehenderit sequi mollitia alias.",
         date:"January 2nd, 2024",
         authorname: "John Doe",
-        authorimg: "img/author.jpg",
+        authorimg: "https://i.pinimg.com/236x/58/3d/f5/583df501a9e35e7b2e9a1abc5137cfff.jpg",
         category: "technology"
         
     },

@@ -28,7 +28,7 @@ function App() {
         <Route path = 'register' element={<Register/>}/>
         <Route path = 'posts/:id/edit' element={<EditPost/>}/>
         <Route path = 'posts/categories/:categories' element={<PostCategories/>}/>
-        <Route path = 'posts/:id' element={<PostPage/>}/>
+        <Route path = 'posts/:id' element={<PostPage posts={posts}/>}/>
         <Route path = 'create' element={<CreatePost/>}/>
         <Route path = 'authors' element={<Authors/>}/>
         <Route path = 'authors/:id' element = {<AuthorWork/>}/>

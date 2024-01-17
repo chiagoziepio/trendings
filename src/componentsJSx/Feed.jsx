@@ -12,7 +12,7 @@ const Feed = ({posts}) => {
                     <div className="postDetailscontainer">
                         <h4 className="postTitle">{post.title}</h4>
                         <Link to = {`/posts/${post.id}`} className="postBody">
-                        <p >{(post.body).length > 150 ? (post.body).substr(0,150) + "...": post.body}</p>
+                        <p >{(post.body).length > 150 ? (post.body).substr(0,150) + "...": post.body} <label >read more</label></p>
                         </Link>
                         
                     </div>
@@ -21,7 +21,7 @@ const Feed = ({posts}) => {
                             <img src={post.authorimg} className='postAuthorImg' />
                             <p className="postAuthorName">{post.authorname}</p>
                         </div>
-                        <Link className="postCategory">
+                        <Link to={`/posts/categories/${post.category}`} className="postCategory">
                             <button>{post.category}</button>
                         </Link>
                     </div>

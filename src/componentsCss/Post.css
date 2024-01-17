@@ -36,6 +36,7 @@
     height: 40px;
     border-radius: 50%;
     margin-right: 15px;
+    border: 2px solid #4942e4;
     
 }
 .postTitle{
@@ -44,10 +45,15 @@
 .postBody{
     text-decoration: none;
    color: #333;
-   transition: font-weight .4s;
+   
 }
-.postBody:hover{
+.postBody label{
+    margin-left: 5px;
+    font-size: 15px;
     font-weight: bold;
+}
+.postBody label:hover{
+    text-decoration: underline;
 }
 .postCategory button{
     width: 100px;

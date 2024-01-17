@@ -33,6 +33,7 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
+    border: 2px solid #4942e4;
 }
 .authorBx .authorname{
    margin-left: 10px;
@@ -50,14 +51,5 @@
 .feedText .title{
     margin-bottom: 10px;
 }
-.feedText .categoryBtn{
-    width: 100px;
-    height: 35px;
-    border: none;
-    background-color: #b6bbc4;
-    font-size: 19px;
-    border-radius: 10px;
-    margin-top: 15px;
-    box-shadow: 0 0 80px rgba(0,0,0,0.2);
-}
+
 

@@ -1,0 +1,50 @@
+.postPage{
+    width: 97vw;
+    padding: 15px;
+    flex-grow: 1;
+    
+}
+.thePostBx{
+    max-width: 350px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 0 90px rgba(182, 187, 196, 0.4);
+    margin: 0 auto;
+}
+.thePostAuthorAndCategory{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 7px;
+}
+.thePostAuthorBx{
+    display: flex;
+    height: 40px;
+    margin: 10px 0;
+    align-items: center;
+    width: 70%;
+}
+.thePostImg{
+    width: 98%;
+    height: 350px;
+    border-radius: 15px;
+}
+.thePostAuthorImg{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #4942e4;
+    margin-right: 10px;
+}
+.thePostTitle{
+    margin: 10px 0;
+}
+.thePostBody{
+    font-size: 17px;
+    margin-bottom: 10px;
+    line-height: 25px;
+}
+.thePostDate{
+    font-weight: 700;
+    font-size: 18px;
+}
