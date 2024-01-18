@@ -15,9 +15,11 @@ import AuthorWork from './componentsJSx/AuthorWork'
 import Post from './componentsJSx/Post'
 import {TrendinsPost} from './componentsJSx/Data'
 import {PostFeeds} from './componentsJSx/Data'
+import {AuthorsInfo} from './componentsJSx/Data'
 function App() {
   const [trendings, setTrendings] = useState(TrendinsPost);
-  const [posts , setPosts] = useState(PostFeeds)
+  const [posts , setPosts] = useState(PostFeeds);
+  const [autorInfos, setAuthorInfos] = useState(AuthorsInfo)
 
   return (
     <Routes>
@@ -30,8 +32,8 @@ function App() {
         <Route path = 'posts/categories/:categories' element={<PostCategories/>}/>
         <Route path = 'posts/:id' element={<PostPage posts={posts}/>}/>
         <Route path = 'create' element={<CreatePost/>}/>
-        <Route path = 'authors' element={<Authors/>}/>
-        <Route path = 'authors/:id' element = {<AuthorWork/>}/>
+        <Route path = 'authors' element={<Authors autorInfos={autorInfos}/>}/>
+        <Route path = 'authors/:username' element = {<AuthorWork/>}/>
         <Route path = 'dashboard' element = {<DashBoard/>}/>
         <Route path = '*' element={<Error/>}/>
 

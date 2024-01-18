@@ -155,5 +155,50 @@ export const PostFeeds = [
         authorimg: "img/author5.jpg",
         category: "Fashion"
         
+    },
+    {
+        id:12,
+        img: 'https://i.pinimg.com/236x/58/3d/f5/583df501a9e35e7b2e9a1abc5137cfff.jpg',
+        title: "Achieve more through Artificial inteligent ",
+        body:"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo nam ratione repellat quas facilis, quasi corporis iusto soluta quae magni aliquam! Magni ullam aliquid recusandae totam laboriosam! Obcaecati in totam quisquam, vero recusandae iure maiores quibusdam reiciendis dolor commodi vel repellendus placeat non reprehenderit molestias sed, pariatur atque harum voluptatem. Accusamus animi necessitatibus error corrupti molestiae reprehenderit sequi mollitia alias. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo nam ratione repellat quas facilis, quasi corporis iusto soluta quae magni aliquam! Magni ullam aliquid recusandae totam laboriosam! Obcaecati in totam quisquam, vero recusandae iure maiores quibusdam reiciendis dolor commodi vel repellendus placeat non reprehenderit molestias sed, pariatur atque harum voluptatem. Accusamus animi necessitatibus error corrupti molestiae reprehenderit sequi mollitia alias.",
+        date:"January 3rd, 2024",
+        authorname: "John Doe",
+        authorimg: "img/author.jpg",
+        category: "Fitness"
+        
+    }
+]
+
+export const AuthorsInfo = [
+    {
+        id: 1,
+        name: "John Doe",
+        img: "img/author.jpg",
+        checked: true
+    },
+    
+    {
+        id: 3,
+        name: "Peter Ifeanyi",
+        img: "img/author3.jpg",
+        checked: false
+    },
+    {
+        id: 5,
+        name:"Anderson",
+        img:"img/author5.jpg",
+        checked: true
+    },
+    {
+        id:2,
+        name: "Okoro",
+        img: "img/author2.jpg",
+        checked: false
+    },
+    {
+        id:4,
+        name: "ShakeandBake",
+        img: "img/author4.jpg",
+        checked: true
     }
 ]
