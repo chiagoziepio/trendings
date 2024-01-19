@@ -33,7 +33,7 @@ function App() {
         <Route path = 'posts/:id' element={<PostPage posts={posts}/>}/>
         <Route path = 'create' element={<CreatePost/>}/>
         <Route path = 'authors' element={<Authors autorInfos={autorInfos}/>}/>
-        <Route path = 'authors/:username' element = {<AuthorWork/>}/>
+        <Route path = 'authors/:username' element = {<AuthorWork posts={posts} />}/>
         <Route path = 'dashboard' element = {<DashBoard/>}/>
         <Route path = '*' element={<Error/>}/>
 

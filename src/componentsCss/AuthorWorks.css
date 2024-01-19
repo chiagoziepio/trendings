@@ -1,0 +1,62 @@
+.authorWorks{
+    width: 97vw;
+    padding: 15px;
+    flex-grow: 1;
+}
+.authorWorkContainer{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.theWork{
+    max-width: 350px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 0 90px rgba(182, 187, 196, 0.4);
+    
+}
+.theworksAuthorInfo{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 7px;
+}
+.theWorksAuthor{
+    display: flex;
+    height: 40px;
+    margin: 10px 0;
+    align-items: center;
+    width: 70%;
+}
+.theWworksAuthorimg{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 15px;
+    border: 2px solid #4942e4;
+}
+.theWorksImg{
+    width: 98%;
+    height: 350px;
+    border-radius: 15px;
+}
+.theWorkTitle{
+    margin: 10px 0;
+}
+.theWorkBody{
+    font-size: 17px;
+    margin-bottom: 10px;
+    line-height: 25px;
+}
+.theworkBodyContainer span{
+    font-weight: 700;
+    font-size: 18px;
+}
+.emptyWork{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.emptyWork p{
+    font-size: 22px;
+}
