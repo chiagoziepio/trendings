@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import {Routes, Route} from 'react-router-dom'
 import Layout from './componentsJSx/Layout'
 import Home from './componentsJSx/Home'
@@ -17,9 +17,18 @@ import {TrendinsPost} from './componentsJSx/Data'
 import {PostFeeds} from './componentsJSx/Data'
 import {AuthorsInfo} from './componentsJSx/Data'
 function App() {
-  const [trendings, setTrendings] = useState(TrendinsPost);
-  const [posts , setPosts] = useState(PostFeeds);
-  const [autorInfos, setAuthorInfos] = useState(AuthorsInfo)
+  const [trendings, setTrendings] = useState([]);
+  const [posts , setPosts] = useState([]);
+  const [autorInfos, setAuthorInfos] = useState([]);
+  const [postTitle, setPostTitle] = useState("");
+  const [postBody, setPostBody] = useState("")
+  
+  useEffect(()=>{
+    setTrendings(TrendinsPost),
+    setPosts(PostFeeds),
+    setAuthorInfos(AuthorsInfo)
+  
+  },[])
 
   return (
     <Routes>
@@ -29,9 +38,14 @@ function App() {
         <Route path = 'posts' element={<Post posts={posts}/>}/>
         <Route path = 'register' element={<Register/>}/>
         <Route path = 'posts/:id/edit' element={<EditPost/>}/>
-        <Route path = 'posts/categories/:categories' element={<PostCategories/>}/>
+        <Route path = 'posts/categories/:categories' element={<PostCategories posts={posts}/>}/>
         <Route path = 'posts/:id' element={<PostPage posts={posts}/>}/>
-        <Route path = 'create' element={<CreatePost/>}/>
+        <Route path = 'create' element={<CreatePost
+         postBody={postBody}
+         postTitle={postTitle}
+         setPostBody={setPostBody}
+         setPostTitle={setPostTitle}
+         />}/>
         <Route path = 'authors' element={<Authors autorInfos={autorInfos}/>}/>
         <Route path = 'authors/:username' element = {<AuthorWork posts={posts} />}/>
         <Route path = 'dashboard' element = {<DashBoard/>}/>

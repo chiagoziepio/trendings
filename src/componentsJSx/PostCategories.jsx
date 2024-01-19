@@ -1,8 +1,20 @@
-import React from 'react'
+import { useParams, Link } from "react-router-dom"
 
-const PostCategories = () => {
+
+const PostCategories = ({posts}) => {
+  const {categories} = useParams();
+  const theCategory = posts.filter(post => (post.category).toLowerCase() === (categories).toLowerCase());
+  
   return (
-    <div>PostCategories</div>
+    <div className="PostCatergories">
+      {theCategory.length >= 1 ?(
+        <div className="CategoryContainer">
+          {theCategory.map()}
+        </div>
+      ):(
+        <div></div>
+      )}
+    </div>
   )
 }
 

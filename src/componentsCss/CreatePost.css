@@ -1,0 +1,36 @@
+.createPost{
+    flex-grow: 1;
+    width: 97vw;
+   padding: 15px;
+    
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 99%;
+}
+.createPost h2{
+    text-align: center;
+    margin: 15px 0;
+    font-family: 'Tektur', curvise, sans-serif;
+}
+.inputgroupsContainer{
+    width: 80%;
+    
+    margin-bottom: 15px;
+}
+.newPostBody,
+.newPostTitle{
+    width: 100%;
+    border: none;
+    outline: none;
+    font-family: inherit;
+    font-size: 19px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #b6bbc4;
+}
+
