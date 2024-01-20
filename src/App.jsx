@@ -21,7 +21,9 @@ function App() {
   const [posts , setPosts] = useState([]);
   const [autorInfos, setAuthorInfos] = useState([]);
   const [postTitle, setPostTitle] = useState("");
-  const [postBody, setPostBody] = useState("")
+  const [postBody, setPostBody] = useState("");
+  const [userImg, setUserImg] = useState("")
+  const [avatar, setAvatar] = useState("")
   
   useEffect(()=>{
     setTrendings(TrendinsPost),
@@ -29,6 +31,10 @@ function App() {
     setAuthorInfos(AuthorsInfo)
   
   },[])
+  const HandleAvatarChange = (e)=>{
+    const file = e.target.files[0]
+    setAvatar(file)
+  }
 
   return (
     <Routes>
@@ -48,7 +54,10 @@ function App() {
          />}/>
         <Route path = 'authors' element={<Authors autorInfos={autorInfos}/>}/>
         <Route path = 'authors/:username' element = {<AuthorWork posts={posts} />}/>
-        <Route path = 'dashboard' element = {<DashBoard/>}/>
+        <Route path = 'dashboard' element = {<DashBoard       avatar={avatar} 
+          setAvatar={setAvatar}
+         HandleAvatarChange={HandleAvatarChange}
+        />}/>
         <Route path = '*' element={<Error/>}/>
 
       </Route>
