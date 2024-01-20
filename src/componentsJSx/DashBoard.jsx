@@ -1,8 +1,9 @@
 import React from 'react'
 import { FaUser } from "react-icons/fa";
 import '../componentsCss/DashBoard.css'
+import { Link } from 'react-router-dom';
 
-const UserProfile = ({HandleAvatarChange,avatar}) => {
+const UserProfile = ({HandleAvatarChange,avatar,user}) => {
   return (
     <div className='dashboard'>
         <h1 className="pageTitle">Profile</h1>
@@ -26,6 +27,15 @@ const UserProfile = ({HandleAvatarChange,avatar}) => {
           onChange={HandleAvatarChange}
           style={{display:"none"}}
         />
+        <div className="userDetails">
+          {!user &&
+           <div className='signsLink'>
+            <Link to = '/login' className='signLink '><button>Sign-In</button></Link>
+            <p>OR</p>
+            <Link to = '/register' className='signLink'><button>Sign-In</button></Link>
+           </div>
+          }
+        </div>
     </div>
   )
 }

@@ -22,7 +22,7 @@ function App() {
   const [autorInfos, setAuthorInfos] = useState([]);
   const [postTitle, setPostTitle] = useState("");
   const [postBody, setPostBody] = useState("");
-  const [userImg, setUserImg] = useState("")
+  const [user, setUser] = useState(null)
   const [avatar, setAvatar] = useState("")
   
   useEffect(()=>{
@@ -57,6 +57,8 @@ function App() {
         <Route path = 'dashboard' element = {<DashBoard       avatar={avatar} 
           setAvatar={setAvatar}
          HandleAvatarChange={HandleAvatarChange}
+         user={user}
+         setUser={setUser}
         />}/>
         <Route path = '*' element={<Error/>}/>
 

@@ -4,15 +4,34 @@
     padding: 15px;
     display: grid;
     place-content: center;
-    border: 1px solid firebrick;
+    
 }
 .userImgBx{
  width: 90%;
- border: 1px solid red;
+ border: 3px solid #b6bbc4;
  border-radius: 50%;
  height: 310px;
 }
 .userAva{
     width: 100%;
     border-radius: 50%;
+}
+.userDetails{
+    margin-top: 15px;
+}
+.signLink button{
+    width: 100%;
+    margin: 10px 0;
+    background-color: #b6bbc4;
+    font-size: 19px;
+    font-family: inherit;
+    border: none;
+    outline: none;
+    box-shadow: 0 0 10px rgba(0,0,0,0.9);
+    border-radius: 10px;
+    padding: 7px;
+    cursor: pointer;
+}
+.signsLink p{
+    text-align: center;
 }
