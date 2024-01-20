@@ -1,0 +1,40 @@
+.registerForm,
+.loginForm{
+    flex-grow: 1;
+    width: 97vw;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.inputContainerBx{
+    width: 50%;
+    border: 1px solid #333;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #fff;
+}
+.inputContainer{
+    width: 100%;
+    margin: 10px 0;
+    
+}
+.inputBx{
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    border-bottom:4px solid #b6bbc4 ;
+    padding: 10px;
+    font-size: 17px;
+}
+.inputContainerBx p{
+    width: 100%;
+    text-align: center;
+    margin-top: 15px;
+}
+.inputContainerBx .btn{
+    margin-left: 30%;
+    
+}

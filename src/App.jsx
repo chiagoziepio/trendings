@@ -24,6 +24,10 @@ function App() {
   const [postBody, setPostBody] = useState("");
   const [user, setUser] = useState(null)
   const [avatar, setAvatar] = useState("")
+  const [name, setName] = useState("");
+  const[email, setEmail] = useState("")
+  const[userName , setUserName] = useState("");
+  const [password, setPassword]= useState("")
   
   useEffect(()=>{
     setTrendings(TrendinsPost),
@@ -40,9 +44,23 @@ function App() {
     <Routes>
       <Route path = '/' element = {<Layout/>}>
         <Route index element = {<Home trendings={trendings}/>}/>
-        <Route path = 'login' element={<Login/>}/>
+        <Route path = 'login' element={<Login
+          userName={userName}
+          password={password}
+          setUserName={setUserName}
+          setPassword={setPassword}
+        />}/>
         <Route path = 'posts' element={<Post posts={posts}/>}/>
-        <Route path = 'register' element={<Register/>}/>
+        <Route path = 'register' element={<Register
+          userName={userName}
+          password={password}
+          setUserName={setUserName}
+          setPassword={setPassword}
+          name={name}
+          setName={setName}
+          email={email}
+          setEmail={setEmail}
+        />}/>
         <Route path = 'posts/:id/edit' element={<EditPost/>}/>
         <Route path = 'posts/categories/:categories' element={<PostCategories posts={posts}/>}/>
         <Route path = 'posts/:id' element={<PostPage posts={posts}/>}/>

@@ -4,7 +4,7 @@ const CreatePost = ({postBody,postTitle,setPostBody,setPostTitle}) => {
   return (
     <div className='createPost'>
       <h2>Create A post</h2>
-      <form >
+      <form className='form' >
         <div className="inputgroupsContainer">
           <input 
             type="text" 
@@ -28,7 +28,7 @@ const CreatePost = ({postBody,postTitle,setPostBody,setPostTitle}) => {
 
             </textarea>
         </div>
-        
+        <button type="submit" className="btn">Create</button>
       </form>
     </div>
   )

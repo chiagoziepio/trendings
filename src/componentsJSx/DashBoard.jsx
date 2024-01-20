@@ -32,7 +32,7 @@ const UserProfile = ({HandleAvatarChange,avatar,user}) => {
            <div className='signsLink'>
             <Link to = '/login' className='signLink '><button>Sign-In</button></Link>
             <p>OR</p>
-            <Link to = '/register' className='signLink'><button>Sign-In</button></Link>
+            <Link to = '/register' className='signLink'><button>Sign-Up</button></Link>
            </div>
           }
         </div>
