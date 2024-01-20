@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 const Authors = ({autorInfos}) => {
   return (
     <div className='authors'>
+      <h3 className="pageTitle">Top Authors</h3>
+      <label>Click on each to see the works</label>
       {autorInfos.length ? (
         <div className="authorsInfoContainer">
           {autorInfos.map(author =>(
@@ -17,6 +19,7 @@ const Authors = ({autorInfos}) => {
                   <p></p>
                 )}
                 <p className='authorInfoName'>{author.name}</p>
+                
             </div>
             </Link>
             

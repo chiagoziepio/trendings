@@ -3,6 +3,17 @@
     padding: 15px;
     flex-grow: 1;
 }
+.pageTitle{
+    text-align: center;
+    font-family:  'Tektur', curvise, sans-serif;
+    margin-bottom: 10px;
+}
+.authors label{
+    
+    width: 100%;
+    display: block;
+    text-align: center;
+}
 .authorsInfoContainer{
     display: flex;
     flex-wrap: wrap;
@@ -20,6 +31,9 @@
    border-top-right-radius: 30px;
    width: 250px;
    transition: transform .4s ease;
+}
+.authorContainer:hover ~.authors label{
+    display: none;
 }
 .authorContainer:hover{
     transform: scaleX(1.1);

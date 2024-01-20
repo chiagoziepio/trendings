@@ -6,7 +6,7 @@ const PostCategories = ({posts}) => {
   const theCategory = posts.filter(post => (post.category).toLowerCase() === (categories).toLowerCase());
   
   return (
-    <div className="PostCatergories">
+    <div className="PostCatergories" style={{flexGrow:1}}>
       {theCategory.length >= 1 ?(
         <div className="postContainer">
           {theCategory.map(category => (
@@ -29,7 +29,14 @@ const PostCategories = ({posts}) => {
         </div>
       ):(
         <div className="empty">
-          <p>No posts under {categories} yet</p>
+          <p style={{
+            margin:10
+          }}>No posts under <span style={{
+            fontSize:24,
+            fontWeight:"bold"
+          }}>
+          {categories}
+          </span> yet</p>
         </div>
       )}
     </div>
