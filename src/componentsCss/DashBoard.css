@@ -8,13 +8,14 @@
 }
 .userImgBx{
  width: 90%;
- border: 3px solid #b6bbc4;
+ border: 3px solid #4942e4;
  border-radius: 50%;
  height: 310px;
 }
 .userAva{
     width: 100%;
     border-radius: 50%;
+    height: 310px;
 }
 .userDetails{
     margin-top: 15px;
@@ -34,4 +35,26 @@
 }
 .signsLink p{
     text-align: center;
+}
+.detailsBx{
+    margin-top: 15px;
+    
+}
+.details{
+    width: 100%;
+    border-bottom:2px solid #000;
+    margin: 15px 0;
+}
+.details span{
+    font-weight: bold;
+}
+.userinfo{
+    border: none;
+    background-color:transparent;
+    outline: none;
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    font-family: inherit;
+    font-size: 18px;
 }

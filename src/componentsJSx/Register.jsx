@@ -1,9 +1,9 @@
 import '../componentsCss/Form.css'
 import { Link } from 'react-router-dom'
 
-const Register = ({userName,password,setUserName,setPassword,name,setName,email,setEmail}) => {
+const Register = ({userName,password,setUserName,setPassword,name,setName,email,setEmail,handleLogin}) => {
   return (
-    <form className='registerForm'>
+    <form className='registerForm'onSubmit={handleLogin}>
       
       <div className="inputContainerBx">
       <h2 className="pageTitle">Register</h2>

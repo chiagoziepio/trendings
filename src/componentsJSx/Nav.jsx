@@ -2,7 +2,7 @@ import { Link, NavLink } from "react-router-dom"
 import { FaUser } from "react-icons/fa";
 import '../componentsCss/Nav.css'
 
-const Nav = () => {
+const Nav = ({avatar}) => {
   return (
     <nav className='navList'>
       <ul className="navUl">
@@ -22,7 +22,14 @@ const Nav = () => {
       </li>
       </ul>
       <div className="profileIcon">
-         <Link to = '/dashboard' ><FaUser size={30} className="user"/></Link> 
+         <Link to = '/dashboard' >
+         {avatar &&
+             <img src={URL.createObjectURL(avatar)} alt="" className='avatar' />  
+            }
+            {!avatar &&
+              <FaUser size={30} className='user'/>
+            }
+          </Link> 
       </div>
     </nav>
   )

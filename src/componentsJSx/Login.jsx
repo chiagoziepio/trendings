@@ -1,9 +1,9 @@
 import '../componentsCss/Form.css'
 import { Link } from 'react-router-dom'
 
-const Login = ({userName,password,setUserName,setPassword}) => {
+const Login = ({userName,password,setUserName,setPassword,handleLogin}) => {
   return (
-    <form className='loginForm'>
+    <form className='loginForm' onSubmit={handleLogin}>
       
       <div className="inputContainerBx">
       <h2 className="pageTitle">Login</h2>

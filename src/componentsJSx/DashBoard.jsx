@@ -3,17 +3,17 @@ import { FaUser } from "react-icons/fa";
 import '../componentsCss/DashBoard.css'
 import { Link } from 'react-router-dom';
 
-const UserProfile = ({HandleAvatarChange,avatar,user}) => {
+const UserProfile = ({HandleAvatarChange,avatar,user,name,email,password}) => {
   return (
     <div className='dashboard'>
-        <h1 className="pageTitle">Profile</h1>
+        <h1 className="pageTitle">{user? user: "Profile"}</h1>
         <label htmlFor="image-upload">
           <div className="userImgBx">
             {avatar &&
              <img src={URL.createObjectURL(avatar)} alt="" className='userAva' />  
             }
             {!avatar &&
-              <FaUser size={300} className='userAva'/>
+              <FaUser size={310} className='userAva'/>
             }
           
         </div>
@@ -34,6 +34,38 @@ const UserProfile = ({HandleAvatarChange,avatar,user}) => {
             <p>OR</p>
             <Link to = '/register' className='signLink'><button>Sign-Up</button></Link>
            </div>
+          }
+          {user &&
+          <div className="detailsBx">
+            <div className="details">
+            <span>Name</span>
+              <input 
+              type="text"
+              readOnly 
+              className='userinfo'
+              value={name}
+              />
+            </div>
+            <div className="details">
+              <span>Email</span>
+              <input 
+              type="text"
+              readOnly 
+              value={email}
+              className='userinfo'
+              />
+            </div>
+            <div className="details">
+              <span>Password</span>
+              <input 
+              type="password"
+              readOnly 
+              value={password}
+              className='userinfo'
+              />
+            </div>
+            
+          </div>
           }
         </div>
     </div>

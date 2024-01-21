@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import {Routes, Route} from 'react-router-dom'
+import {Routes, Route, useNavigate} from 'react-router-dom'
 import Layout from './componentsJSx/Layout'
 import Home from './componentsJSx/Home'
 import Authors from './componentsJSx/Authors'
@@ -28,7 +28,7 @@ function App() {
   const[email, setEmail] = useState("")
   const[userName , setUserName] = useState("");
   const [password, setPassword]= useState("")
-  
+   const navigate = useNavigate()
   useEffect(()=>{
     setTrendings(TrendinsPost),
     setPosts(PostFeeds),
@@ -39,16 +39,22 @@ function App() {
     const file = e.target.files[0]
     setAvatar(file)
   }
+  const handleLogin = (e)=>{
+    e.preventDefault()
+    setUser(userName)
+    navigate("/dashboard")
+  }
 
   return (
     <Routes>
-      <Route path = '/' element = {<Layout/>}>
+      <Route path = '/' element = {<Layout avatar={avatar}/>}>
         <Route index element = {<Home trendings={trendings}/>}/>
         <Route path = 'login' element={<Login
           userName={userName}
           password={password}
           setUserName={setUserName}
           setPassword={setPassword}
+          handleLogin={handleLogin}
         />}/>
         <Route path = 'posts' element={<Post posts={posts}/>}/>
         <Route path = 'register' element={<Register
@@ -60,6 +66,7 @@ function App() {
           setName={setName}
           email={email}
           setEmail={setEmail}
+          handleLogin={handleLogin}
         />}/>
         <Route path = 'posts/:id/edit' element={<EditPost/>}/>
         <Route path = 'posts/categories/:categories' element={<PostCategories posts={posts}/>}/>
@@ -77,6 +84,9 @@ function App() {
          HandleAvatarChange={HandleAvatarChange}
          user={user}
          setUser={setUser}
+         password={password}
+         name ={name}
+         email={email}
         />}/>
         <Route path = '*' element={<Error/>}/>
 

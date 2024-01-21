@@ -22,7 +22,17 @@
 }
 .user{
     color: black;
+    width:30px;
+    height: 30px;
+    border-radius: 50%;
+    
 
+}
+.avatar{
+    width: 35px;
+    height: 35px;
+    
+    border-radius: 50%;
 }
 .profileIcon{
     width: 40px;
@@ -32,4 +42,7 @@
     place-content: center;
     border-radius: 50%;
     margin-left: 30px;
+    border: 2px solid #4942e4;
+    object-fit: contain;
+    
 }
