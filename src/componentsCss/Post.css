@@ -67,3 +67,8 @@
 .postCategory button:hover{
     color: #eee;
 }
+@media(max-width:620px){
+    .postContent{
+        width: 90%;
+    }
+}

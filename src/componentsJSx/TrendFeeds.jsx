@@ -7,7 +7,10 @@ const Feed = ({trends}) => {
         <div className="imgBx">
             <img src={trends.img} className='feedImg'  />
             <div className="authorBx">
-              <img src={trends.authorimg} className='authorImg' />
+              <Link to = {`/authors/${trends.authorname}`}>
+                <img src={trends.authorimg} className='authorImg' />
+            
+              </Link>
               <span className="authorname">{trends.authorname}</span>
             </div>
             
@@ -17,6 +20,7 @@ const Feed = ({trends}) => {
             <p className="body">{shortFeedBody}  <Link to ={`/posts/${trends.id}`} className='readMoreLink'>Read more</Link></p>
             <Link to={`posts/categories/${trends.category}`}><button className='btn categoryBtn'>{trends.category}</button></Link>
             
+
         </div>
     </div>
   )

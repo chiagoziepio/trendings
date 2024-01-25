@@ -18,7 +18,9 @@ const Feed = ({posts}) => {
                     </div>
                     <div className=" authorAndcategoryBx">
                         <div className="postAuthorDetailcontainer">
-                            <img src={post.authorimg} className='postAuthorImg' />
+                           <Link to={`/authors/${post.authorname}`} >
+                                <img src={post.authorimg} className='postAuthorImg' />
+                            </Link>
                             <p className="postAuthorName">{post.authorname}</p>
                         </div>
                         <Link to={`/posts/categories/${post.category}`} className="postCategory">
