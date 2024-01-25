@@ -3,6 +3,8 @@
     flex-wrap: nowrap;
     justify-content: space-evenly;
     align-items: center;
-    width: 96vw;
+    width: 97vw;
     margin-top: 15px;
+    margin-inline: auto;
+    position: relative;
 }

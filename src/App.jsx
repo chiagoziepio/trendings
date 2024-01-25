@@ -34,7 +34,7 @@ function App() {
     setPosts(PostFeeds),
     setAuthorInfos(AuthorsInfo)
   
-  },[])
+  },[trendings,autorInfos,posts])
   const HandleAvatarChange = (e)=>{
     const file = e.target.files[0]
     setAvatar(file)
@@ -43,6 +43,15 @@ function App() {
     e.preventDefault()
     setUser(userName)
     navigate("/dashboard")
+  }
+  const handleRegister = (e)=>{
+    /* e.preventDefault()
+    const id = autorInfos.length? autorInfos[autorInfos.length - 1].id + 1 : 1;
+    const newAuthor = {id, name:userName, img:avatar, checked:false}
+    const allAuthors =[...autorInfos,newAuthor]
+    setAuthorInfos(allAuthors)
+    setUser(userName)
+    navigate("/dashboard") */
   }
 
   return (
@@ -66,7 +75,7 @@ function App() {
           setName={setName}
           email={email}
           setEmail={setEmail}
-          handleLogin={handleLogin}
+          handleRegister={handleRegister}
         />}/>
         <Route path = 'posts/:id/edit' element={<EditPost/>}/>
         <Route path = 'posts/categories/:categories' element={<PostCategories posts={posts}/>}/>
