@@ -4,7 +4,7 @@ import '../componentsCss/AuthorWorks.css'
 const AuthorWork = ({posts}) => {
   const {username} = useParams()
   const theAuthorWorks = posts.filter(post => (post.authorname).toLowerCase() === username.toLowerCase())
-  console.log(theAuthorWorks);
+  
   return (
     <div className="authorWorks">
       {theAuthorWorks.length >= 1? (

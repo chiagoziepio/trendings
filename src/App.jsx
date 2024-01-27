@@ -16,6 +16,8 @@ import Post from './componentsJSx/Post'
 import {TrendinsPost} from './componentsJSx/Data'
 import {PostFeeds} from './componentsJSx/Data'
 import {AuthorsInfo} from './componentsJSx/Data'
+import axios from 'axios'
+
 function App() {
   const [trendings, setTrendings] = useState([]);
   const [posts , setPosts] = useState([]);
@@ -29,12 +31,31 @@ function App() {
   const[userName , setUserName] = useState("");
   const [password, setPassword]= useState("")
    const navigate = useNavigate()
+   const TrendsUrl = "http://localhost:3500/TrendinsPost";
+   const PostUrl = "http://localhost:3500/PostFeeds";
+   const AuthorsUrl ="http://localhost:3500/AuthorsInfo"
   useEffect(()=>{
-    setTrendings(TrendinsPost),
-    setPosts(PostFeeds),
-    setAuthorInfos(AuthorsInfo)
+    const fetchData = async ()=>{
+      try {
+        const response1 = await axios(TrendsUrl)
+        const data1 = response1.data
+        const response2 = await axios(PostUrl)
+        const data2 = response2.data
+        const response3 = await axios(AuthorsUrl)
+        const data3 = response3.data
+        setTrendings(data1)
+        setPosts(data2)
+        setAuthorInfos(data3)
+      } catch (error) {
+        
+      }
+      
+      
+      
+    }
+    fetchData();
   
-  },[trendings,autorInfos,posts])
+  },[])
   const HandleAvatarChange = (e)=>{
     const file = e.target.files[0]
     setAvatar(file)
@@ -44,14 +65,15 @@ function App() {
     setUser(userName)
     navigate("/dashboard")
   }
-  const handleRegister = (e)=>{
-    /* e.preventDefault()
+  const handleRegister = async (e)=>{
+    e.preventDefault()
     const id = autorInfos.length? autorInfos[autorInfos.length - 1].id + 1 : 1;
+    
     const newAuthor = {id, name:userName, img:avatar, checked:false}
-    const allAuthors =[...autorInfos,newAuthor]
-    setAuthorInfos(allAuthors)
+    const rep = await axios.post(AuthorsUrl, newAuthor)
+    setAuthorInfos(rep.data)
     setUser(userName)
-    navigate("/dashboard") */
+    navigate("/dashboard")
   }
 
   return (

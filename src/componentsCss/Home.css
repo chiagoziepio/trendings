@@ -54,6 +54,7 @@
 @media(max-width:620px){
     .Trendfeed-container{
         flex-wrap: wrap;
+        
     }
     .feedImg{
         width: 100%;
