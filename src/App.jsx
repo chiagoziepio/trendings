@@ -19,6 +19,7 @@ import {AuthorsInfo} from './componentsJSx/Data'
 import axios from 'axios'
 
 function App() {
+  /* states for the blog */
   const [trendings, setTrendings] = useState([]);
   const [posts , setPosts] = useState([]);
   const [autorInfos, setAuthorInfos] = useState([]);
@@ -30,6 +31,12 @@ function App() {
   const[email, setEmail] = useState("")
   const[userName , setUserName] = useState("");
   const [password, setPassword]= useState("")
+  const [category, setCategory]= useState("uncategorized")
+  const [thumbimg , setThumbimg]=("")
+  /* post categories to select from */
+  const postcategories=["Politics","Education","Sports","Business","Technology","Cars","Trades","Healths","Shoes","Programming","Musics","Art","Fashion"]
+
+  /* localhost link for the blog data */
    const navigate = useNavigate()
    const TrendsUrl = "http://localhost:3500/TrendinsPost";
    const PostUrl = "http://localhost:3500/PostFeeds";
@@ -56,9 +63,16 @@ function App() {
     fetchData();
   
   },[])
+  /* proifle picture upload */
   const HandleAvatarChange = (e)=>{
     const file = e.target.files[0]
     setAvatar(file)
+    
+  }
+  /* post image upload */
+  const handlePostImage=(e)=>{
+    const file = e.target.files[0]
+    setThumbimg(file)
   }
   const handleLogin = (e)=>{
     e.preventDefault()
@@ -69,9 +83,12 @@ function App() {
     e.preventDefault()
     const id = autorInfos.length? autorInfos[autorInfos.length - 1].id + 1 : 1;
     
-    const newAuthor = {id, name:userName, img:avatar, checked:false}
+    const newAuthor = {id, name,email, userName, img:avatar, checked:false, password}
     const rep = await axios.post(AuthorsUrl, newAuthor)
-    setAuthorInfos(rep.data)
+    const data = await rep.data
+    const AllAuthors = [...autorInfos, data]
+
+    setAuthorInfos(AllAuthors)
     setUser(userName)
     navigate("/dashboard")
   }
@@ -107,6 +124,13 @@ function App() {
          postTitle={postTitle}
          setPostBody={setPostBody}
          setPostTitle={setPostTitle}
+         category={category}
+         setCategory={setCategory}
+         thumbimg={thumbimg}
+         setThumbimg={setThumbimg}
+         postcategories={postcategories}
+         handlePostImage={handlePostImage}
+
          />}/>
         <Route path = 'authors' element={<Authors autorInfos={autorInfos}/>}/>
         <Route path = 'authors/:username' element = {<AuthorWork posts={posts} />}/>

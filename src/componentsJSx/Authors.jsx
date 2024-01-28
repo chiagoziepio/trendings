@@ -10,7 +10,7 @@ const Authors = ({autorInfos}) => {
       {autorInfos.length ? (
         <div className="authorsInfoContainer">
           {autorInfos.map(author =>(
-            <Link to = {`/authors/${author.name}`}className="authorWorkLink">
+            <Link to = {`/authors/${author.userName}`}className="authorWorkLink">
                 <div className="authorContainer" key={author.id}>
                 <img src={author.img} className="authorInfoImg"  />
                 {author.checked ?(
@@ -18,7 +18,7 @@ const Authors = ({autorInfos}) => {
                 ):(
                   <p></p>
                 )}
-                <p className='authorInfoName'>{author.name}</p>
+                <p className='authorInfoName'>{author.userName}</p>
                 
             </div>
             </Link>
