@@ -2,27 +2,27 @@ import '../componentsCss/CreatePost.css'
 import Reactquill from 'react-quill'
 import 'react-quill/dist/quill.snow.css'
 
-const CreatePost = ({postBody,postTitle,setPostBody,setPostTitle,category,setCategory,thumbimg,setThumbimg,postcategories,handlePostImage}) => {
+const CreatePost = ({postBody,postTitle,setPostBody,setPostTitle,category,setCategory,thumbimg,setThumbimg,postcategories,handlePostImage,handleSubmitPost}) => {
 
   const modules ={
     toolbar:[
-      [{"header":[1,2,3,4,5,false]}],
+      [{header:[1,2,3,4,5,false]}],
       ["bold", "italic", "underline","strike","blockquote"],
-      [{"list":"ordered"},{"list":"bullet"},{"indent": "+1"},{"indent": "-1"}],
-      ["link","image"]
-      ["clean"]
-    ]
-  }
+      [{list:"ordered"},{list:"bullet"},{indent: "+1"},{indent: "-1"}],
+      ["link","image", "video"],
+      ["clean"],
+    ],
+  };
   const formats =[
     "header",
     "bold", "italic", "underline","strike","blockquote",
     "list","bullet","indent",
     "link","image"
-  ]
+  ];
   return (
     <div className='createPost'>
       <h2>Create A post</h2>
-      <form className='form' >
+      <form className='form' onSubmit={handleSubmitPost} >
         <div className="inputgroupsContainer">
           <input 
             type="text" 
@@ -47,20 +47,18 @@ const CreatePost = ({postBody,postTitle,setPostBody,setPostTitle,category,setCat
           ))}
         </select>
         
-        <Reactquill value={postBody}
-            onChange={(e)=> setPostBody(e.target.value)}
-            className='newPostBody' modules={modules} formats={formats}/>
+        {/* <Reactquill 
+          theme='snow'
+          value={postBody}
+          onChange={setPostBody}
+          className='newPostBody'
+          modules={modules}
+          
+          /> */}
         
         </div>
-        <input 
-          type="file" 
-          name="" 
-          value={thumbimg} 
-          id="flie-upload" 
-          accept='image/png ,image/jpg, image/jpg' 
-          onChange={handlePostImage}
-          />
-        {/* <div className="inputgroupsContainer">
+        
+        <div className="inputgroupsContainer">
           <textarea   
            cols="50" 
             rows="15"
@@ -72,7 +70,14 @@ const CreatePost = ({postBody,postTitle,setPostBody,setPostTitle,category,setCat
             >
 
             </textarea>
-        </div> */}
+        </div>
+        <input 
+          type="file" 
+          name=""  
+          id="flie-upload" 
+          accept='imgage/jpeg, image/png, image/jpg'  
+          onChange={handlePostImage}
+          />
         <button type="submit" className="btn">Create</button>
       </form>
     </div>

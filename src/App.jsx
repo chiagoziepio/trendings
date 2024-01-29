@@ -17,6 +17,7 @@ import {TrendinsPost} from './componentsJSx/Data'
 import {PostFeeds} from './componentsJSx/Data'
 import {AuthorsInfo} from './componentsJSx/Data'
 import axios from 'axios'
+import {format} from 'date-fns'
 
 function App() {
   /* states for the blog */
@@ -32,7 +33,8 @@ function App() {
   const[userName , setUserName] = useState("");
   const [password, setPassword]= useState("")
   const [category, setCategory]= useState("uncategorized")
-  const [thumbimg , setThumbimg]=("")
+  const [thumbimg , setThumbimg]= useState("")
+
   /* post categories to select from */
   const postcategories=["Politics","Education","Sports","Business","Technology","Cars","Trades","Healths","Shoes","Programming","Musics","Art","Fashion"]
 
@@ -67,12 +69,12 @@ function App() {
   const HandleAvatarChange = (e)=>{
     const file = e.target.files[0]
     setAvatar(file)
-    
   }
   /* post image upload */
   const handlePostImage=(e)=>{
     const file = e.target.files[0]
-    setThumbimg(file)
+    const dimg = URL.createObjectURL(file)
+    setThumbimg(dimg)
   }
   const handleLogin = (e)=>{
     e.preventDefault()
@@ -91,6 +93,21 @@ function App() {
     setAuthorInfos(AllAuthors)
     setUser(userName)
     navigate("/dashboard")
+  }
+  const handleSubmitPost = async (e)=>{
+    e.preventDefault()
+    const id = posts.length? posts[posts.length - 1].id + 1 : 1;
+    const date = format(new Date(), 'MMMM dd, yyyy')
+    const newPost = {id,img:thumbimg,title:postTitle,body:postBody, authorname:userName,authorimg:avatar,category:category, date:date}
+    const rep =  await axios.post(PostUrl, newPost)
+    const data = await rep.data
+    const allPost = [...posts, data] 
+    setPosts(allPost)
+    navigate("/posts")
+    setPostBody("")
+    setPostTitle("")
+    setThumbimg("")
+    /* console.log(category, postBody,postTitle, thumbimg); */
   }
 
   return (
@@ -130,6 +147,7 @@ function App() {
          setThumbimg={setThumbimg}
          postcategories={postcategories}
          handlePostImage={handlePostImage}
+         handleSubmitPost={handleSubmitPost}
 
          />}/>
         <Route path = 'authors' element={<Authors autorInfos={autorInfos}/>}/>

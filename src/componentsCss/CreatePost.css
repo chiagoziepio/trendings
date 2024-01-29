@@ -9,7 +9,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    max-width: 99%;
+    width: 99%;
 }
 .createPost h2{
     text-align: center;
@@ -19,7 +19,7 @@
 .inputgroupsContainer{
     width: 80%;
     
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 .newPostBody,
 .newPostTitle,
@@ -44,7 +44,7 @@ select{
 
 #flie-upload{
     margin-top: 5px;
-    width: 50%;
+    width: 30%;
     background: white;
     border: none;
     outline: none;
