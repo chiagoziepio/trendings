@@ -13,6 +13,7 @@ import Login from './componentsJSx/Login'
 import Register from './componentsJSx/Register'
 import AuthorWork from './componentsJSx/AuthorWork'
 import Post from './componentsJSx/Post'
+import Protector from './componentsJSx/Protector'
 import {TrendinsPost} from './componentsJSx/Data'
 import {PostFeeds} from './componentsJSx/Data'
 import {AuthorsInfo} from './componentsJSx/Data'
@@ -40,9 +41,9 @@ function App() {
 
   /* localhost link for the blog data */
    const navigate = useNavigate()
-   const TrendsUrl = "http://localhost:3500/TrendinsPost";
-   const PostUrl = "http://localhost:3500/PostFeeds";
-   const AuthorsUrl ="http://localhost:3500/AuthorsInfo"
+   const TrendsUrl = /* "http://localhost:3500/TrendinsPost" */ "https://server-ztr9.onrender.com/TrendinsPost";
+   const PostUrl = /* "http://localhost:3500/PostFeeds" */ "https://server-ztr9.onrender.com/PostFeeds";
+   const AuthorsUrl =/* "http://localhost:3500/AuthorsInfo" */ "https://server-ztr9.onrender.com/AuthorsInfo"
   useEffect(()=>{
     const fetchData = async ()=>{
       try {
@@ -136,20 +137,25 @@ function App() {
         <Route path = 'posts/:id/edit' element={<EditPost/>}/>
         <Route path = 'posts/categories/:categories' element={<PostCategories posts={posts}/>}/>
         <Route path = 'posts/:id' element={<PostPage posts={posts}/>}/>
-        <Route path = 'create' element={<CreatePost
-         postBody={postBody}
-         postTitle={postTitle}
-         setPostBody={setPostBody}
-         setPostTitle={setPostTitle}
-         category={category}
-         setCategory={setCategory}
-         thumbimg={thumbimg}
-         setThumbimg={setThumbimg}
-         postcategories={postcategories}
-         handlePostImage={handlePostImage}
-         handleSubmitPost={handleSubmitPost}
+        <Route path='create' element={<Protector user={user}>
+          <CreatePost
+            postBody={postBody}
+            postTitle={postTitle}
+            setPostBody={setPostBody}
+            setPostTitle={setPostTitle}
+            category={category}
+            setCategory={setCategory}
+            thumbimg={thumbimg}
+            setThumbimg={setThumbimg}
+            postcategories={postcategories}
+            handlePostImage={handlePostImage}
+            handleSubmitPost={handleSubmitPost}
 
-         />}/>
+            />
+        </Protector>} >
+            
+        </Route>
+    
         <Route path = 'authors' element={<Authors autorInfos={autorInfos}/>}/>
         <Route path = 'authors/:username' element = {<AuthorWork posts={posts} />}/>
         <Route path = 'dashboard' element = {<DashBoard       avatar={avatar} 
