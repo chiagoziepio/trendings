@@ -75,7 +75,7 @@ const CreatePost = ({postBody,postTitle,setPostBody,setPostTitle,category,setCat
           type="file" 
           name=""  
           id="flie-upload" 
-          accept='imgage/jpeg, image/png, image/jpg'  
+          accept='image/*'  
           onChange={handlePostImage}
           />
         <button type="submit" className="btn">Create</button>

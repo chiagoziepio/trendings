@@ -23,7 +23,7 @@ const UserProfile = ({HandleAvatarChange,avatar,user,name,email,password}) => {
           type="file" 
           name="" 
           id="image-upload" 
-          accept='imgage/jpeg, image/png, image/jpg' 
+          accept='image/*' 
           onChange={HandleAvatarChange}
           style={{display:"none"}}
         />
