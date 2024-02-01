@@ -23,14 +23,30 @@ footer .footerCategoryBx .footerCategoryLink{
     color: #eee;
     border: none;
     border-radius: 10px;
+}.copywrightbx{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 15px;
+    gap: 20px;
+    
 }
 .copywright{
     color: #eee;
     font-size: 22px;
+    
+}
+.copywrightbx a{
+    color:#eee ;
+    font-size: 18px;
+
 }
 @media (max-width:620px){
     footer .footerCategoryBx{
         width: 80%;
         
+    }
+    .copywrightbx{
+        flex-wrap: wrap;
     }
 }

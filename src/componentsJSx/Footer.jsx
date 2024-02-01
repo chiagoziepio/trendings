@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import '../componentsCss/Footer.css'
+import { FaGithub } from "react-icons/fa";
 
 const Footer = () => {
   const today = new Date()
@@ -23,6 +24,7 @@ const Footer = () => {
       </div>
       <div className="copywrightbx">
         <p className="copywright">Copywright &copy;Trendings.co  {today.getUTCFullYear()}</p>
+        <a href="https://github.com/chiagoziepio/trendings.git"><FaGithub size={30} className='githubicon'/> the source code</a>
       </div>
     </footer>
   )
