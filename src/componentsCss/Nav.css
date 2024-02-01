@@ -74,17 +74,39 @@
 @media (max-width:620px){
     .navBar{
         display: none;
-        
         position: absolute;
-        top: 50px;
+        top: 0px;
         right: 0;
         left: 0;
         background-color: white;
-        
+        animation: display;
+        animation-duration: 3s;
     }
     .navBar.show{
         display: block;
         z-index: 9;
+        /* animation: display;
+        animation-duration: 3s; */
+        
+    }
+    @keyframes display{
+        0%{
+            top: -30px;
+            opacity: .3;
+            transform: scale(0.7);
+        }
+        75%{
+            top: -10px;
+            opacity: .8 ;
+            transform: scale(0.9);
+            
+        }
+        100%{
+            top: 0;
+            opacity: 1 ;
+            transform: scale(1);
+           
+        }
     }
     .menuContainer{
         display: block;

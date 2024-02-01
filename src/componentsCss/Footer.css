@@ -43,7 +43,7 @@ footer .footerCategoryBx .footerCategoryLink{
 }
 @media (max-width:620px){
     footer .footerCategoryBx{
-        width: 80%;
+        width: 100%;
         
     }
     .copywrightbx{
