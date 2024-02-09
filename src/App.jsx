@@ -92,8 +92,7 @@ function App() {
      }else{
       alert("signed in successfully")
       setUser(userName)
-      setUserName("")
-      setPassword("")
+      
      }
        console.log(pat);
     } catch (error) {
