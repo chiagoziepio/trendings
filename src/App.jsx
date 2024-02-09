@@ -85,11 +85,15 @@ function App() {
      const pat =  datas.filter(dat => dat.password === password && dat.userName === userName)
      if(pat.length === 0){
       alert("User doesn't exsit")
+      setUserName("")
+      setPassword("")
+
       return
      }else{
       alert("signed in successfully")
       setUser(userName)
-    
+      setUserName("")
+      setPassword("")
      }
        console.log(pat);
     } catch (error) {
@@ -112,6 +116,10 @@ function App() {
   }
   const handleSubmitPost = async (e)=>{
     e.preventDefault()
+    if(postBody.length < 1 && postTitle.length < 1){
+      alert("cant submit empty text space")
+      return
+    }
     const id = posts.length? posts[posts.length - 1].id + 1 : 1;
     const date = format(new Date(), 'MMMM dd, yyyy')
     const newPost = {id,img:thumbimg,title:postTitle,body:postBody, authorname:userName,authorimg:avatar,category:category, date:date}
