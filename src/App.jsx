@@ -41,9 +41,9 @@ function App() {
 
   /* localhost link for the blog data */
    const navigate = useNavigate()
-   const TrendsUrl = /* "http://localhost:3500/TrendinsPost"  */"https://server-ztr9.onrender.com/TrendinsPost";
-   const PostUrl = /* "http://localhost:3500/PostFeeds" */ "https://server-ztr9.onrender.com/PostFeeds";
-   const AuthorsUrl =/* "http://localhost:3500/AuthorsInfo" */ "https://server-ztr9.onrender.com/AuthorsInfo";
+   const TrendsUrl = "http://localhost:3500/TrendinsPost" /* "https://server-ztr9.onrender.com/TrendinsPost" */;
+   const PostUrl = "http://localhost:3500/PostFeeds" /* "https://server-ztr9.onrender.com/PostFeeds" */;
+   const AuthorsUrl ="http://localhost:3500/AuthorsInfo" /* "https://server-ztr9.onrender.com/AuthorsInfo" */;
   useEffect(()=>{
     const fetchData = async ()=>{
       try {
@@ -83,7 +83,7 @@ function App() {
        const reps = await axios(AuthorsUrl)
        const datas = await reps.data
      const pat =  datas.filter(dat => dat.password === password && dat.userName === userName)
-     if(pat.length === 0){
+     if(pat.length == 0){
       alert("User doesn't exsit")
       setUserName("")
       setPassword("")

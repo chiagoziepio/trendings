@@ -8,3 +8,11 @@
     margin-inline: auto;
     position: relative;
 }
+@media (max-width:620px){
+    .header{
+        margin-top: 0;
+        background: white;
+        padding: 10px 0;
+        width: 100vw;
+    }
+}
