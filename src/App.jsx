@@ -35,6 +35,7 @@ function App() {
   const [password, setPassword]= useState("")
   const [category, setCategory]= useState("uncategorized")
   const [thumbimg , setThumbimg]= useState("")
+  const [isLoading, setIsloading] = useState(true)
 
   /* post categories to select from */
   const postcategories=["Politics","Education","Sports","Business","Technology","Cars","Trades","Healths","Shoes","Programming","Musics","Art","Fashion"]
@@ -56,8 +57,10 @@ function App() {
         setTrendings(data1)
         setPosts(data2)
         setAuthorInfos(data3)
-      } catch (error) {
-        console.log(error);
+      }catch(error ){
+        console.log( error.response1);
+      }finally{
+        setIsloading(false)
       }
       
       
@@ -136,7 +139,7 @@ function App() {
   return (
     <Routes>
       <Route path = '/' element = {<Layout avatar={avatar}/>}>
-        <Route index element = {<Home trendings={trendings}/>}/>
+        <Route index element = {<Home trendings={trendings} isLoading={isLoading}/>}/>
         <Route path = 'login' element={<Login
           userName={userName}
           password={password}
